@@ -1,9 +1,9 @@
 //IMPORT
 // const dotenv = require('dotenv');
 // const colors = require('colors');
-const authRouter = require('./routes/auth');
 const db = require('./config/db');
-const app = require('./app/app');
+const express = require('express');
+const app = express();
 const PORT = 3000
 const http = require('http');
 const server =  http.createServer(app);
@@ -11,6 +11,28 @@ server.listen(PORT, () => {
     console.log(`Socket Server listening on port ${PORT}`.yellow.bold);
 });
 
+const authRouter = require('./routes/auth');
+const doctorRouter = require('./routes/doctor');
+const pharmacyRouter = require('./routes/pharmacy');
+const Addrouter = require('./routes/upload');
+const fileUpload = require('express-fileupload');
+const cartRouter = require('./routes/cart');
+const appointmentRouter = require('./routes/appointment');
+const emergencyRouter = require('./routes/emergency');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(fileUpload({
+    useTempFiles: true,
+}));
+
+app.use('/',authRouter);
+app.use('/',doctorRouter);
+app.use('/',pharmacyRouter);
+app.use('/',Addrouter);
+app.use('/',cartRouter);
+app.use('/',appointmentRouter);
+app.use('/',emergencyRouter);
 
 app.get('/',(req,res)=>{
     res.status(200).json({
