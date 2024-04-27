@@ -12,6 +12,12 @@ server.listen(PORT, () => {
     console.log(`Socket Server listening on port ${PORT}`.yellow.bold);
 });
 
+
+app.get('/',(req,res)=>{
+    res.status(200).json({
+        "msg" : "server running"
+    })
+});
 // var io = require('socket.io')(server,{
 //     cors:{
 //         origin:"*",
