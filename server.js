@@ -5,11 +5,8 @@ const db = require('./config/db');
 const express = require('express');
 const app = express();
 const PORT = 3000
-const http = require('http');
-const server =  http.createServer(app);
-server.listen(PORT, () => {
-    console.log(`Socket Server listening on port ${PORT}`.yellow.bold);
-});
+
+
 
 const authRouter = require('./routes/auth');
 const doctorRouter = require('./routes/doctor');
