@@ -4,9 +4,11 @@
 const authRouter = require('./routes/auth');
 const db = require('./config/db');
 const app = require('./app/app');
+
+app.use('/',doctorRouter);
 const PORT = 3000
 const http = require('http');
-const cors = require('cors');
+const doctorRouter = require('./routes/doctor');
 const server =  http.createServer(app);
 server.listen(PORT, () => {
     console.log(`Socket Server listening on port ${PORT}`.yellow.bold);
@@ -16,8 +18,10 @@ server.listen(PORT, () => {
 app.get('/',(req,res)=>{
     res.status(200).json({
         "msg" : "server running"
-    })
+    });
 });
+
+
 // var io = require('socket.io')(server,{
 //     cors:{
 //         origin:"*",
