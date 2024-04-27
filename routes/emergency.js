@@ -1,11 +1,12 @@
 const express = require('express');
 const auth = require('../middlewares/auth');
 const emergencyRouter = express.Router();
+require('dotenv').config();
 const accountSid = process.env.accountSid;
 const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
 const User = require('../model/usermodel');
-require('dotenv').config();
+
 
 emergencyRouter.post('/api/send-message',auth,async(req,res)=>{
 
