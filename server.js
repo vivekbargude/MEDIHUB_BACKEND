@@ -6,8 +6,6 @@ const express = require('express');
 const app = express();
 const PORT = 3000
 
-
-
 const authRouter = require('./routes/auth');
 const doctorRouter = require('./routes/doctor');
 const pharmacyRouter = require('./routes/pharmacy');

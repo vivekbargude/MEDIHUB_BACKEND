@@ -1,15 +1,44 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "server.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "server.js"
-        }
+      {
+        "src": "/auth(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/doctor(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/pharmacy(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/upload(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/cart(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/appointment(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/emergency(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      }
     ]
-}
+  }
+  
