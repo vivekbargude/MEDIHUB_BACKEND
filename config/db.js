@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const colors = require('colors');
-const DB_URL = "mongodb://localhost:27017"
+const DB_URL = "mongodb+srv://medihubdevelopersteam:uoDoBvjExHs5gr5n@medihub.sd4eyw6.mongodb.net/?retryWrites=true&w=majority&appName=MEDIHUB"
 
 
 const connection = mongoose

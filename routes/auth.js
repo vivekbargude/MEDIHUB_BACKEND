@@ -6,13 +6,13 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
-
-
 authRouter.get('/api/get',(req,res)=>{
     res.status(200).json({
         msg : "success true"
     });
 });
+
+
 //SIGNUP
 
 authRouter.post('/api/signup', async(req,res)=>{
