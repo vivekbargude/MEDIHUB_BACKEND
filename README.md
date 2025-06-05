@@ -62,8 +62,8 @@ GET    /api/admin/users            # Admin can view all users
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/vivekbargude/MEDIHUB_BACKEND.git
-cd MEDIHUB_BACKEND
+https://github.com/vivekbargude/Medihub_Backend.git
+cd Medihub_Backend
 ```
 
 ### 2. Install Dependencies
