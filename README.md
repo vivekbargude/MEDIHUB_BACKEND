@@ -1,29 +1,32 @@
-🩺 MediHub Backend – Node.js REST API for Smart Healthcare
-This is the backend server for the MediHub healthcare management system. Built with Node.js, Express, and MongoDB, this REST API handles user authentication, doctor-patient appointment management, prescription handling, pharmacy interactions, and administrative controls — all in one scalable backend.
 
-📚 Table of Contents
-Project Overview
+# 🩺 MediHub Backend – Node.js REST API for Smart Healthcare
 
-Features
+This is the backend server for the **MediHub** healthcare management system. Built with **Node.js**, **Express**, and **MongoDB**, this REST API handles user authentication, doctor-patient appointment management, prescription handling, pharmacy interactions, and administrative controls — all in one scalable backend.
 
-API Endpoints
+---
 
-Installation & Setup
+## 📚 Table of Contents
 
-Usage
+* [Project Overview](#project-overview)
+* [Features](#features)
+* [API Endpoints](#api-endpoints)
+* [Installation & Setup](#installation--setup)
+* [Usage](#usage)
+* [Environment Variables](#environment-variables)
+* [Technologies Used](#technologies-used)
+* [Contributing](#contributing)
+* [Credits](#credits)
 
-Environment Variables
+---
 
-Technologies Used
+## 📌 Project Overview
 
-Contributing
+The MediHub Backend powers the healthcare system’s core logic and data management. It supports multiple user roles — **patients**, **doctors**, **pharmacists**, and **admins** — and ensures secure, role-based access to APIs. With JWT-based authentication, MongoDB schemas for medical records, and modular route handlers, this backend is designed for efficiency, security, and extensibility.
 
-Credits
+---
 
-📌 Project Overview
-The MediHub Backend powers the healthcare system’s core logic and data management. It supports multiple user roles — patients, doctors, pharmacists, and admins — and ensures secure, role-based access to APIs. With JWT-based authentication, MongoDB schemas for medical records, and modular route handlers, this backend is designed for efficiency, security, and extensibility.
+## ✅ Features
 
-✅ Features
 ✔️ User registration & login (with role-based access)
 ✔️ JWT authentication & secure session handling
 ✔️ Appointment creation and management
@@ -33,12 +36,13 @@ The MediHub Backend powers the healthcare system’s core logic and data managem
 ✔️ Modular, clean codebase using MVC pattern
 ✔️ MongoDB models for scalability and flexibility
 
-📡 API Endpoints
+---
+
+## 📡 API Endpoints
+
 Here’s a sample of the core REST endpoints:
 
-bash
-Copy
-Edit
+```
 POST   /api/auth/register          # Register a new user (patient, doctor, etc.)
 POST   /api/auth/login             # Login and receive JWT token
 GET    /api/user/profile           # Get logged-in user's profile
@@ -47,67 +51,81 @@ GET    /api/appointments/list      # View appointments (filtered by user role)
 POST   /api/prescriptions/create   # Doctor creates a prescription
 GET    /api/prescriptions/:id      # View prescription details
 GET    /api/admin/users            # Admin can view all users
+```
+
 (🔒 JWT Auth required for protected routes)
 
-🛠 Installation & Setup
-1. Clone the Repository
-bash
-Copy
-Edit
-https://github.com/vivekbargude/MEDIHUB_BACKEND.git
-cd MEDIHUB_BACKEND
-2. Install Dependencies
-bash
-Copy
-Edit
-npm install
-3. Set Up Environment Variables
-Create a .env file in the root directory with the following values:
+---
 
-ini
-Copy
-Edit
+## 🛠 Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/vivekbargude/MEDIHUB_BACKEND.git
+cd MEDIHUB_BACKEND
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in the root directory with the following values:
+
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
-🚀 Usage
+```
+
+---
+
+## 🚀 Usage
+
 Start the backend server with:
 
-bash
-Copy
-Edit
+```bash
 npm run dev
+```
+
 The server will be accessible at:
-📍 http://localhost:5000/
+📍 `http://localhost:5000/`
 
 Make requests using Postman or integrate with the frontend app (e.g., MediHub Flutter).
 
-🧠 Technologies Used
-Node.js – JavaScript runtime
+---
 
-Express.js – Web framework
+## 🧠 Technologies Used
 
-MongoDB – NoSQL database
+* **Node.js** – JavaScript runtime
+* **Express.js** – Web framework
+* **MongoDB** – NoSQL database
+* **Mongoose** – MongoDB ODM
+* **JWT** – Token-based authentication
+* **Dotenv** – Environment variable management
+* **Nodemon** – Dev server auto-restart
+* **Cors & Helmet** – Security middleware
 
-Mongoose – MongoDB ODM
+---
 
-JWT – Token-based authentication
+## 🤝 Contributing
 
-Dotenv – Environment variable management
-
-Nodemon – Dev server auto-restart
-
-Cors & Helmet – Security middleware
-
-🤝 Contributing
 We welcome contributions! To contribute:
 
-Fork the repository
+1. Fork the repository
+2. Create a new feature or fix branch
+3. Make your changes
+4. Test the functionality
+5. Submit a pull request
 
-Create a new feature or fix branch
+---
 
-Make your changes
+## 🙌 Credits
 
-Test the functionality
+Developed by: Vivek Bargude
+Part of the full-stack MediHub healthcare management system.
 
-Submit a pull request
